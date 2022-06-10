@@ -1,0 +1,279 @@
+#include <algorithm>
+	#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+struct b{
+	string rej1;
+	string name;
+	string rej;
+	string act1;
+};
+struct a{ 
+string miss;
+string name;
+
+string rej;
+string act1;
+string act2;
+string act3;
+string act4;
+string act5;
+int date;
+long int start;
+long int end;
+};
+int main()
+{ 
+int q1;
+
+
+fstream fout;
+
+fout.open("8 4.txt");
+if(!fout.is_open()){
+ cout<<"Bad";
+ cout << endl;
+ fout<<"Bad";
+ fout << endl;
+}
+else{
+    cout << "File is opened"<< endl;
+	string n;  
+	int movies;
+	cout<<"How much movies will you enter?"<<endl;	
+	cin>>movies;
+a c[movies];
+a d[movies];
+for(int i=0;i<movies;++i){
+getline(cin,c[i].miss);
+cout<<"movie:"<<i+1<<endl;
+cout<<"name:"<<endl;
+getline(cin,c[i].name);
+cout<<"producer:";
+getline(cin,c[i].rej);
+cout<<"actor1:";
+getline(cin,c[i].act1);
+cout<<"actor2:";
+getline(cin,c[i].act2);
+cout<<"actor3:";
+getline(cin,c[i].act3);
+cout<<"actor4:";
+getline(cin,c[i].act4);
+cout<<"actor5:";
+getline(cin,c[i].act5);
+cout<<"release day:";
+cin>>c[i].date;
+cout<<"expenses:";
+cin>>c[i].start;
+cout<<"collection:";
+cin>>c[i].end;
+cout<<endl;
+}
+for(int y=0;y<movies;++y){
+ cout<<"What film?"<<endl;
+cout<<"producer:"<<endl;
+getline(cin,d[0].miss);
+getline(cin,d[0].rej);
+cout<<"Actor№1?"<<endl;
+getline(cin,d[0].act1);
+ for(int y=0;y<movies;++y){
+ for(int i=0;i<movies;++i){
+if(d[y].rej==c[i].rej && d[y].act1==c[i].act1){
+	cout<<"Info:";
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+
+}
+}
+
+cout<<"do you want to contiue?"<<endl;
+cout<<"1)yes"<<endl;
+cout<<"2)no"<<endl;
+int extrachoice;
+cin>>extrachoice;
+if(extrachoice==2){
+	break;
+}
+}
+
+cout<<"do you want to change something?"<<endl;
+int choice;
+cout<<"1)Yes"<<endl;
+cout<<"2)No"<<endl;
+cin>>choice;
+if(choice==1){
+	cout<<"What do you want to change?"<<endl;
+	cout<<"1)name:"<<endl;
+	cout<<"2)producer:"<<endl;
+	cout<<"3)actor1:"<<endl;
+	cout<<"4)actor2:"<<endl;
+	cout<<"5)actor3:"<<endl;
+	cout<<"6)actor4:"<<endl;
+	cout<<"7)actor5:"<<endl;
+	cout<<"8)release day:"<<endl;
+	cout<<"9)expenses:"<<endl;
+	cout<<"10)collection:"<<endl;
+	cout<<"11)nothing"<<endl;	
+int choice1;
+cin>>choice1;
+if(choice1==1){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		getline(cin,c[i].name);
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==2){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		getline(cin,c[i].rej);
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==3){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		getline(cin,c[i].act1);
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==4){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		getline(cin,c[i].act2);
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==5){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		getline(cin,c[i].act3);
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==6){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		getline(cin,c[i].act4);
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==7){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		getline(cin,c[i].act5);
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==8){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		cin>>c[i].date;
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==9){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+		cin>>c[i].start;
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==10){
+	cout<<"What  film?"<<endl;
+	string p;
+getline(cin,d[0].miss);
+	getline(cin,p);
+for(int i=0;i<movies;++i){
+if(p==c[i].name){
+			cin>>c[i].end;
+			cout<<endl;
+	cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+}
+if(choice1==11){
+for(int i=0;i<movies;++i){
+cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+for(int i=0;i<movies;++i){
+fout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+
+}
+if(choice==2){
+for(int i=0;i<movies;++i){
+cout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+for(int i=0;i<movies;++i){
+fout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+}
+for(int i=0;i<movies;++i){
+fout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<" "<<c[i].act4<<" "<<c[i].act5<<" "<<c[i].date<<" "<<c[i].start<<" "<<c[i].end<<" "<<endl;
+}
+
+}
+fout.close();
+ return 0;
+}
+New change
