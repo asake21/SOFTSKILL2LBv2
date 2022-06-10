@@ -276,4 +276,5 @@ fout<<c[i].name<<" "<<c[i].rej<<" "<<c[i].act1<<" "<<c[i].act2<<" "<<c[i].act3<<
 fout.close();
  return 0;
 }
-New change
+
+NEW CHANGE 2
